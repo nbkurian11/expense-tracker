@@ -1,19 +1,21 @@
-from flask import Flask
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<p>Expense Tracker</p>"
+    return render_template("home.html")
 
-@app.route("/add-income")
+@app.route("/add-income", methods=["POST", "GET"])
 def income():
-    return "<p>Add Income page</p>"
+    return render_template("income.html")
 
-@app.route("/add-expenses")
+@app.route("/add-expenses", methods=["POST", "GET"])
 def expenses():
-    return "<p>Add expenses page</p>"
+    return render_template("expense.html")
 
-@app.route("/view-stats")
-def history():
-    return "<p>View Personal Stats</p>"
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+app.run(debug=True)
