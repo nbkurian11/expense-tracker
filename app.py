@@ -14,6 +14,6 @@ def income():
 def expenses():
     return "<p>Add expenses page</p>"
 
-@app.route("/view-transactions")
-def transactions():
-    return "<p>View Transactions</p>"
+@app.route("/view-stats")
+def history():
+    return "<p>View Personal Stats</p>"
